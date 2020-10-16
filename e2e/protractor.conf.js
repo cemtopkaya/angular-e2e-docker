@@ -70,5 +70,10 @@ exports.config = {
     });
     jasmine.getEnv().addReporter(prettyReporter);
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    
+    jasmine.getEnv().addReporter(new JUnitXmlReporter({
+      savePath: "./e2e/test-results/E2E",
+      consolidateAll: false,
+    }));
   }
 };
